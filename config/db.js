@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const conectarDB = async () => {
     try {
+        mongoose.set("strictQuery", false);
         const db = await mongoose.connect(process.env.MONGO_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
